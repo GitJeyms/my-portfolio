@@ -1,40 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> My Hobbies </title>
-</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> My Hobbies</title>
 <style>
-    
 
-    body{
-        background-color: dimgray;
-    }
-    h2{
-        font-size: medium;
-        color: honeydew;
-    }
-    li{
+    body {
         font-style: italic;
-        color:burlywood
+        background-color: darkgoldenrod;
     }
-    </style>
-<body>
-    <h2> My Hobbies</h2>
-    <ul>
-        <li> Dancing. </li>
-        <li> Playing Games. </li>
-        <li> Codings. </li>
-        <li> Exploring and Learning new things. </li>
-    </ul>
-    <hr>
+    h1{
+        font-style: italic;
+        border-style: solid;
+        border-color: burlywood;
+        border-width: 4px 11px 21px 35px;
+        width: 97%;
+        color: darkred;
+        text-align: center;
+        font-size: 45px;
+        background: white; 
+    }
+.jcpo {
+  background-color: burlywood;
+  color: darkred;
+  cursor: pointer;
+  padding: 18px;
+  width: 40%;
+  text-align: left;
+  outline: auto;
+  font-size: 15px;
+  transition: 0.4s;
+}
 
-    <h2> Social Media Accounts </h2>
-    <li> <a style="color: darkred;" href="https://www.facebook.com/rn1xjames">Facebook Account </a></li>
-    <li> <a style="color: darkred;" href="https://www.instagram.com/jeyms_o/">Instagram Account </a> </li>
-    <li> <a style="color: darkred;" href="https://www.tiktok.com/@_jeymsss">Tiktok Account </a> </li>
-    <hr>
+.active, .jcpo:hover {
+  background-color: olive;
+}
+
+.jcpo:after {
+  content: '\002B';
+  color: black;
+  font-weight: bold;
+  float: right;
+  margin-left: 15px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.panel {
+  background-color: khaki;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  width: 40%;
+}
+</style>
+</head>
+<body>
+
+<h1> List of my Hobbies: </h1>
+<ul style="list-style-type: '\1F44D'">
+    <li> <a style="color: powderblue" href="index_socialmed.html">Go to Social Media Accounts.</a> </li>
+    <li> <a style="color: powderblue" href="index.html">Back to Resume.</a> </li>
+</ul>
+
+
+<button class="jcpo">Hobby 1</button>
+<div class="panel">
+  <p>Dancing</p>
+</div>
+<button class="jcpo">Hobby 2</button>
+<div class="panel">
+   <p>Making Dance Choreography </p>
+</div>
+
+<button class="jcpo">Hobby 3</button>
+<div class="panel">
+    <p>Basketball (Sometimes)</p>
+</div>
+
+<button class="jcpo">Hobby 4</button>
+<div class="panel">
+    <p>Playing Games</p> 
+</div>
+
+<button class="jcpo">Hobby 5</button>
+<div class="panel">
+     <p>Exploring and Learning new things.</p>
+</div>
+</ul>
+
+<script>
+var acc = document.getElementsByClassName("jcpo");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+</script>
 
 </body>
 </html>
